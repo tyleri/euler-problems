@@ -4,14 +4,12 @@ class problem4
 {
 	public static void Main()
 	{
-		int i = 999, j = 999;
-		for (; i > 99; i--)
-			for (; j > 99; j--)
-				if (testPalin(i*j))
-						{
-						Console.WriteLine(i*j);
-						return;
-						}
+		int largest = 0;
+		for (int i = 100; i < 1000; i++)
+			for (int j = 100; j < 1000; j++)
+				if (testPalin(i*j) && (i*j > largest))
+					largest = i*j;
+		Console.WriteLine(largest);
 	}
 
 	public static bool testPalin(int num)
