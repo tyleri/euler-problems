@@ -1,0 +1,4 @@
+# no temp files
+*~
+# no exe files
+*.exe
