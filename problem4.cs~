@@ -14,11 +14,12 @@ class problem4
 
 	public static bool testPalin(int num)
 	{
-		int[] array = new int[num.ToString().Length];
+		int testnum = num;
+		int[] array = new int[testnum.ToString().Length];
 		for (int n = 0; n < array.Length; n++)
 		{
-			array[n] = num % 10;
-			num /= 10;
+			array[n] = testnum % 10;
+			testnum /= 10;
 		}
 
 		for (int k = 0; k < array.Length; k++)
