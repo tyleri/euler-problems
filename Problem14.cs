@@ -19,7 +19,7 @@ class Problem14
 
 	public static int Collatz(int start)
 	{
-		double begin = start;
+		long begin = start;
 		int numTerms = 1;
 
 		while (begin > 1)
