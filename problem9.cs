@@ -1,6 +1,6 @@
 using System;
 
-class problem9
+class Problem9
 {
 	public static void Main()
 	{
