@@ -22,7 +22,7 @@ class Problem14
 		double begin = start;
 		int numTerms = 1;
 
-		while (begin != 1)
+		while (begin > 1)
 		{
 			if (begin % 2 == 0)
 				begin /= 2;
