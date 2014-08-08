@@ -6,7 +6,17 @@ class Problem15
 	public static void Main(string[] args)
 	{
 		Stopwatch s = Stopwatch.StartNew();
-		int size = Convert.ToInt32(args[0]);
+
+		int size;
+		try
+		{
+			size = Convert.ToInt32(args[0]);
+		}
+		catch (IndexOutOfRangeException e)
+		{
+			size = 10;
+		}
+
 		Console.WriteLine(Rods(size, size));
 		s.Stop();
 		Console.WriteLine("Elapsed Time: {0} ms", s.ElapsedMilliseconds);	
