@@ -17,6 +17,7 @@ class Problem15
 			size = 10;
 		}
 
+		// Answer is 137,846,528,820
 		Console.WriteLine(Rods(size, size));
 		s.Stop();
 		Console.WriteLine("Elapsed Time: {0} ms", s.ElapsedMilliseconds);	
