@@ -20,7 +20,7 @@ class Problem15
 		// Answer is 137,846,528,820
 		Console.WriteLine(Rods(size, size));
 		s.Stop();
-		Console.WriteLine("Elapsed Time: {0} ms", s.ElapsedMilliseconds);	
+		Console.WriteLine("Elapsed Time: {0}", s.Elapsed);
 	}
 
 	static long Rods(int width, int height)
