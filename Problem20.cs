@@ -1,19 +1,25 @@
 using System;
 using System.Diagnostics;
 using System.Linq;
+using System.Numerics;
 
 class Problem20
 {
 	public static void Main()
 	{
 		Stopwatch s = Stopwatch.StartNew();
-		int[] result = new int[200];
-		result[0] = 1;
 
+		BigInteger result = BigInteger.One;
 		for (int count = 2; count <= 100; count++)
-			Multiply(count, result);
+			result = result * count;
+		int sum = 0;
+		while (result != BigInteger.Zero)
+		{
+			sum += (int) (result % 10);
+			result /= 10;
+		}
+		Console.WriteLine(sum);
 
-		Console.WriteLine(result.Sum());
 		s.Stop();
 		Console.WriteLine("{0} ms", s.Elapsed);
 	}
