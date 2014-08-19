@@ -1,39 +1,22 @@
 using System;
-using System.Linq;
+using System.Diagnostics;
+using System.Numerics;
 
 class Problem16
 {
 	public static void Main()
 	{
-		int[] num = new int[1000];
-		num[0] = 1;
+		Stopwatch s = Stopwatch.StartNew();
+		BigInteger result = BigInteger.Pow(2, 1000);
 
-		// multiply by 2 1000 times;
-		for (int i = 0; i < 1000; i++)
+		int sumDigits = 0;
+		while (result > 0)
 		{
-			// Multiplies all digits by two
-			MultTwo(num);
-
-			// Fixes place values
-			AdjustDigits(num);
+			sumDigits += (int) (result % 10);
+			result /= 10;
 		}
-
-		Console.WriteLine(num.Sum());
-	}
-
-	static void MultTwo(int[] numArray)
-	{
-		for (int index = 0; index < numArray.Length; index++)
-			numArray[index] *= 2;
-	}
-
-	static void AdjustDigits(int[] numArray)
-	{
-		for (int i = 0; i < 1000; i++)
-			if (numArray[i] > 9)
-			{
-				numArray[i+1] += numArray[i] / 10;
-				numArray[i] %= 10;
-			}
+		Console.WriteLine(sumDigits);
+		s.Stop();
+		Console.WriteLine("Time Elapsed: {0}", s.Elapsed);
 	}
 }
