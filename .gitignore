@@ -1,4 +1,7 @@
 # no temp files
 *~
+*.swp
 # no exe files
 *.exe
+# no object files
+*.obj
